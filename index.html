@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVOS Cloud</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">N</div>
+    <div><strong>NOVOS Cloud</strong><span>Local Cloud Gaming Test</span></div>
+  </div>
+  <div class="status"><i></i><span id="serverStatus">Test Server</span></div>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">YOUR GAMES. IN THE CLOUD.</p>
+    <h1>Play from almost any device.</h1>
+    <p class="sub">This prototype tests the NOVOS Cloud session system before a real authorized game-streaming backend is connected.</p>
+  </div>
+  <div class="cloud-icon">☁️</div>
+</section>
+
+<section class="toolbar">
+  <input id="search" type="search" placeholder="Search games..." aria-label="Search games">
+  <button id="micBtn" class="secondary">🎤 Microphone</button>
+  <button id="controllerBtn" class="secondary">🎮 Test Controller</button>
+</section>
+
+<section>
+  <div class="section-title"><h2>Game Library</h2><span id="gameCount">4 games</span></div>
+  <div id="games" class="games"></div>
+</section>
+
+<section id="sessionPanel" class="session hidden">
+  <div class="session-head">
+    <div>
+      <p class="eyebrow">CLOUD SESSION</p>
+      <h2 id="sessionTitle">Connecting...</h2>
+      <div class="session-meta">Session <code id="sessionId">—</code></div>
+    </div>
+    <div class="session-actions">
+      <button id="fullscreenBtn" class="secondary">⛶ Fullscreen</button>
+      <button id="stopBtn" class="danger">Stop Session</button>
+    </div>
+  </div>
+
+  <div id="stream" class="stream">
+    <div class="stream-grid"></div>
+    <div class="stream-center">
+      <div class="spinner"></div>
+      <h3 id="streamStatus">Starting local cloud session...</h3>
+      <p id="streamDetail">No real game is being streamed yet.</p>
+    </div>
+    <div class="stream-hud">
+      <span>🟢 Server</span>
+      <span>🎮 Input</span>
+      <span>🎤 Mic</span>
+      <span id="timerBadge">⏱ 60:00</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div><b>Keyboard / Mouse</b><span>Ready</span></div>
+    <div><b>Controller</b><span id="controllerState">Not tested</span></div>
+    <div><b>Microphone</b><span id="micState">Not requested</span></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>NOVOS Cloud Prototype v0.2</span>
+  <span>1-hour maximum test session</span>
+</footer>
+</div>
+
+<div id="controllerModal" class="modal hidden">
+  <div class="modal-box">
+    <button class="modal-close" id="closeController">×</button>
+    <p class="eyebrow">CONTROLLER TEST</p>
+    <h2>Test your controller</h2>
+    <p id="controllerHelp">Press a button or move a stick.</p>
+    <div class="controller-visual">
+      <div class="stick left" id="leftStick">L</div>
+      <div class="stick right" id="rightStick">R</div>
+      <div class="buttons">
+        <span id="btnA">A</span><span id="btnB">B</span><span id="btnX">X</span><span id="btnY">Y</span>
+      </div>
+    </div>
+    <div id="controllerDetails" class="details">No controller detected yet.</div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
